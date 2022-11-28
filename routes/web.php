@@ -16,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::controller(aaaController::class)->group(function() {
-    Route::get('xxx', 'bbb');
+// Route::controller(aaaController::class)->group(function() {
+//     Route::get('xxx', 'bbb');
+// });
+use App\Http\Controllers\Admin\NewsController;
+Route::controller(NewsController::class)->prefix('admin')->group(function() {
+    Route::get('news/create', 'add');
+});
+use App\Http\Controllers\Admin\ProfileController;
+Route::controller(ProfileController::class)->group(function() {
+    Route::get('admin/profile/create', 'add');
+});
+Route::controller(ProfileController::class)->group(function() {
+    Route::get('admin/profile/edit', 'edit');
 });

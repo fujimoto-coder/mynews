@@ -28,9 +28,3 @@ class ProfileController extends Controller
     }
     //
 }
-Route::controller(ProfileController::class)->group(function() {
-    Route::get('admin/profile/create', 'add');
-});
-Route::controller(ProfileController::class)->group(function() {
-    Route::get('admin/profile/edit', 'edit');
-});
