@@ -30,3 +30,6 @@ Route::controller(ProfileController::class)->group(function() {
 Route::controller(ProfileController::class)->group(function() {
     Route::get('admin/profile/edit', 'edit');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
