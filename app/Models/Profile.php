@@ -13,7 +13,11 @@ class Profile extends Model
     public static $rules = array(
         'name' => 'required',
         'gender' => 'required',
-         'hobby' => 'required',
-          'introduction' => 'required',
+        'hobby' => 'required',
+        'introduction' => 'required',
     );
+    public function profile_histories()
+    {
+        return $this->hasMany('App\Models\ProfileHistory');
+    }
 }
